@@ -12,6 +12,7 @@ function Search() {
     return (
         <div className={cx('wrapper')}>
             <Tippy
+                delay={[0, 500]}
                 interactive
                 placement="bottom"
                 render={(attrs) => (
