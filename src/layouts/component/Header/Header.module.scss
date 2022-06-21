@@ -9,6 +9,7 @@
 }
 .inner {
     width: 1150px;
+    max-width: 100%;
     padding: 0 24px;
     margin: 0 auto;
     height: 100%;
@@ -18,6 +19,7 @@
 }
 .action {
     display: flex;
+    align-items: center;
 }
 .more-btn {
     border: 0;
@@ -29,4 +31,20 @@
         width: 20px;
         height: 20px;
     }
+}
+.user-login {
+    display: flex;
+    margin-left: 8px;
+    cursor: pointer;
+}
+.user-logo {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+.user-icon {
+    border: 0;
+    background-color: transparent;
+    margin: 10px;
+    cursor: pointer;
 }

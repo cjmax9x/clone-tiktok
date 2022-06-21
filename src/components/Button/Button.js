@@ -3,7 +3,7 @@ import classNames from 'classnames/bind';
 import styles from './Button.module.scss';
 
 const cx = classNames.bind(styles);
-function Button({ children, to, href, primary, text, leftIcon, rightIcon, className, ...passProps }) {
+function Button({ children, to, href, primary, lastBtn, text, leftIcon, rightIcon, className, ...passProps }) {
     let Comp = 'button';
     const props = {
         ...passProps,
@@ -15,7 +15,7 @@ function Button({ children, to, href, primary, text, leftIcon, rightIcon, classN
         props.href = href;
         Comp = 'a';
     }
-    const classes = cx('wrapper', className, { primary, text });
+    const classes = cx('wrapper', className, { primary, lastBtn, text });
     return (
         <Comp className={classes} {...props}>
             {leftIcon && <span className={cx('icon')}>{leftIcon}</span>}

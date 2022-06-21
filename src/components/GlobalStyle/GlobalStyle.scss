@@ -21,6 +21,21 @@ body {
     text-rendering: optimizeSpeed;
     color: var(--text-color);
 }
+html *::-webkit-scrollbar {
+    border-radius: 0;
+    width: 8px;
+}
+
+html *::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+html *::-webkit-scrollbar-track {
+    border-radius: 0;
+    background-color: rgba(0, 0, 0, 0);
+}
+
 //fonts emmbeded
 @font-face {
     font-family: ProximaNova;
@@ -41,4 +56,19 @@ body {
     font-family: SofiaPro;
     src: url('/assets/fonts/sofiapro-bold.woff2');
     font-weight: 700;
+}
+body {
+    .tippy-box {
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 22px;
+        background-color: rgba(84, 84, 84, 0.92);
+        color: rgb(255, 255, 255);
+        padding: 6px 8px;
+    }
+    .tippy-box[data-placement^='bottom'] > .tippy-arrow:before {
+        color: rgba(84, 84, 84, 0.92);
+        top: -8px;
+    }
 }

@@ -34,6 +34,7 @@ function Menu({ children, data }) {
                         {current.data.map((item, index) => (
                             <MenuItem
                                 key={index}
+                                lastBtn={item.separate}
                                 nextMenu={() => {
                                     if (item.children) {
                                         setHistory((prev) => [...prev, item.children]);
