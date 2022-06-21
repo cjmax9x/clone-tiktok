@@ -11,9 +11,15 @@
 }
 .search {
     flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    input:not(:placeholder-shown) ~ .search-btn {
+        color: rgba(22, 24, 35, 0.75);
+    }
 }
 .input {
-    width: 90%;
+    width: 80%;
     height: 100%;
     border: 0;
     outline: none;
@@ -31,7 +37,7 @@
     align-items: center;
     border: 0px;
     color: rgba(22, 24, 35, 0.34);
-    padding: 12px 11px 16px;
+    padding: 8px 12px 12px;
     border-bottom-right-radius: 92px;
     border-top-right-radius: 92px;
     cursor: pointer;
@@ -51,11 +57,24 @@
 }
 .loading {
     position: absolute;
+    right: 16%;
     top: 50%;
     transform: translateY(-50%);
 }
 .close {
     position: absolute;
+    right: 16%;
     top: 50%;
     transform: translateY(-50%);
+}
+.tippy-box {
+    width: 361px;
+}
+.title {
+    height: 30px;
+    padding: 5px 12px;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 600;
+    color: rgba(22, 24, 35, 0.5);
 }
