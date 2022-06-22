@@ -16,19 +16,16 @@ function Search() {
     const [inputValue, setInputValue] = useState('');
     const [showSearchResult, setShowSearchResult] = useState(false);
     const [loading, setLoading] = useState(false);
-    const [close, setClose] = useState(false);
-    const inputRef = useRef();
 
+    const inputRef = useRef();
     const deBounced = useDebounce(inputValue, 500);
 
     useEffect(() => {
         if (!deBounced.trim()) {
             setSearchResult([]);
-            setClose(false);
             return;
         }
         setLoading(true);
-        setClose(true);
         axios
             .get('https://tiktok.fullstack.edu.vn/api/users/search', {
                 params: {
@@ -48,11 +45,10 @@ function Search() {
     return (
         <div className={cx('wrapper')}>
             <Tippy
-                visible={searchResult.length > 0 && showSearchResult}
+                visible={showSearchResult && searchResult.length > 0}
                 onClickOutside={() => {
                     setShowSearchResult(false);
                 }}
-                delay={[0, 100]}
                 interactive
                 placement="bottom"
                 render={(attrs) => (
@@ -89,11 +85,11 @@ function Search() {
                             <FontAwesomeIcon icon={faSpinner} />
                         </button>
                     )}
-                    {close && !loading && (
+                    {!!inputValue && !loading && (
                         <button
                             onClick={() => {
                                 setInputValue('');
-                                setClose(false);
+                                setSearchResult([]);
                                 inputRef.current.focus();
                             }}
                             className={cx('close')}

@@ -1,0 +1,33 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+}
+.menu-item {
+    display: flex;
+    align-items: center;
+    font-size: 1.8rem;
+    padding: 8px;
+    &:hover {
+        background: rgba(22, 24, 35, 0.03);
+    }
+}
+.active-icon {
+    display: none;
+}
+.active {
+    .icon {
+        display: none;
+    }
+    .active-icon {
+        display: flex;
+        color: var(--primary);
+    }
+}
+.title {
+    font-weight: 800;
+    line-height: 25px;
+    margin-left: 8px;
+}
+.icon {
+    display: flex;
+}
